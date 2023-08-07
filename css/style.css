@@ -4,40 +4,36 @@ font-family: 'Lora', serif;
 font-family: 'Ubuntu', sans-serif;
 */
 :root {
-    /* dark shades of primary color*/
-    --clr-primary-1: #7e5816;
-    --clr-primary-2: #93651a;
-    --clr-primary-3: hsl(37, 69%, 38%);
-    --clr-primary-4: hsl(38, 70%, 43%);
-    /* primary/main color */
-    --clr-primary-5: hsl(37, 70%, 48%);
-      /* lighter shades of primary color */
-    --clr-primary-6: hsl(37, 64%, 58%);
-    --clr-primary-7: hsl(38, 64%, 69%);
-    --clr-primary-8: hsl(37, 64%, 74%);
-    --clr-primary-9: hsl(37, 64%, 79%);
-    --clr-primary-10:hsl(39, 63%, 89%);
+    /* accent color */
+    --clr-accent-1: #E2725B;
+    --clr-accent-2: #B45742;
+    /* background shades */
+    --clr-bg-1: #F8F1E9;
+    --clr-bg-2: #FDF8F3;
+    --clr-bg-3: #E2D7CE;
+    
+
     /* darkest grey - used for headings */
-    --clr-grey-1: hsl(209, 61%, 16%);
-    --clr-grey-2: hsl(211, 39%, 23%);
-    --clr-grey-3: hsl(209, 34%, 30%);
-    --clr-grey-4: hsl(209, 28%, 39%);
+    --clr-brown-1: #2C2926;
+    --clr-brown-2: #634B34;
+
     /* grey used for paragraphs */
-    --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-6: hsl(209, 23%, 60%);
-    --clr-grey-7: hsl(211, 27%, 70%);
-    --clr-grey-8: hsl(210, 31%, 80%);
-    --clr-grey-9: hsl(212, 33%, 89%);
-    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-brown-3: #4E4743;
+
+    /* beige */
+    --clr-beige-1:  #B5A795;
+    --clr-beige-1: #8D8069;
+
     --clr-white: #fff;
-    --ff-primary: "Roboto", sans-serif;
-    --ff-secondary: "Open Sans", sans-serif;
+    --ff-primary: 'Ubuntu', sans-serif;
+    --ff-secondary: 'Lora', serif;
     --transition: all 0.3s linear;
     --spacing: 0.25rem;
     --radius: 0.5rem;
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    --max-width: 1170px;
+
+    --border-btm: 1px #707070 solid;
     }
 /* 
 =============
@@ -49,20 +45,21 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
-    background-color: #F2F2F2;
+    background-color: var(--clr-bg-2);
+    color:   var(--clr-brown-3);
     line-height: 1.5;
 }
 
 header {
-    background-color: #296B92;
+    background-color:   #F8F1E9; 
     padding: 2em 0 1em 0;
     text-align: center;
     margin-bottom: 3rem;
 }
 
 footer {
-    background-color: #455F74;
-    color: #FFFFFF;
+    background-color: var(--clr-bg-1);
+    color: var(--clr-brown-1);
     margin-bottom: 0;
     text-align: center;
     padding: 2rem 0;
@@ -73,27 +70,24 @@ h2,
 h3 {
     font-family: 'Lora', serif;
     font-weight: 400;
-    color: #143774;
+    color: var(--clr-brown-1);
     margin-top: 0;
 }
 
 h1 {    
     font-size: 2rem;
     margin: 0;
-    color: #ffffff;
 }
-h3 {
-    color: #1792d2;
-}
+
 
 a {
     text-decoration: none;
-    color: #1792d2;
+    color:  var(--clr-beige-1);
 }
 
 a:hover,
 a:focus {
-    color: #7CB08A;
+    color: var(--clr-beige-2);
 }
 
 img {
@@ -104,9 +98,12 @@ img {
 .image-full {
     max-height: 300px;
     width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
     margin-bottom: 2rem;
+
 }
 
 ul {
@@ -123,8 +120,8 @@ Global classes
 
 .subtitle {
     font-weight: 700;
-    color: #d4e1e9;
-    font-size: .75rem;
+    color: var(--clr-brown-2);
+    font-size: .8rem;
     margin: 0;
 }
 
@@ -156,7 +153,7 @@ nav li {
 }
 
 nav a {
-    color: #707070;
+    color: var(--clr-brown-2);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -165,15 +162,15 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-    color: #1792d2;
+    color: var(--clr-accent-2);
 }
 
 .current-page {
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid var(--clr-accent-1);
 }
 
 .current-page:hover {
-    color: #707070;
+    color: var(--clr-accent-1);
 }
 
 @media (max-width: 675px) {
@@ -201,14 +198,14 @@ Articles
 }
 
 .article-read-more {
-    color: #1792d2;
+    color: var(--clr-accent-1);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 .article-read-more:hover,
 .article-read-more:focus {
-    color: #143774;
+    color: var(--clr-accent-2);
     text-decoration: underline;
 }
 
@@ -223,7 +220,7 @@ Article featured
 ===========
 */
 .article-featured {
-    border-bottom: 1px #707070  solid;
+    border-bottom: var(--border-btm);
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -281,7 +278,9 @@ Sidebar
 */
 
 .sidebar-content {
-    border: 10px solid #8C6239;
+    border: 10px solid #E2D7CE;
+    background-color: #F8F1E9;
+    color: #2C2926;
     margin-bottom: 2.5rem;
     padding: 1rem;
 }
@@ -304,7 +303,7 @@ Sidebar
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px #707070  solid;
+    border-bottom: var(--border-btm);
     margin-bottom: 1rem;
 }
 
@@ -327,6 +326,7 @@ Sidebar
     }
     .about-img { 
         max-height: 100px;
+    }
     main {
         width: 70%;
     }
@@ -338,13 +338,7 @@ Sidebar
 }
 
 /* 
-===========
-Footer
-===========
+=========== 
+Footer 
+=========== 
 */
-
-
-/* about section */
-.about-subheading {
-
-}
