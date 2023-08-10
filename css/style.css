@@ -4,37 +4,43 @@ font-family: 'Lora', serif;
 font-family: 'Ubuntu', sans-serif;
 */
 :root {
-    /* accent color */
-    --clr-accent-1: #E2725B;
-    --clr-accent-2: #B45742;
-    /* background shades */
-    --clr-bg-1: #F8F1E9;
-    --clr-bg-2: #FDF8F3;
-    --clr-bg-3: #E2D7CE;
+    /* Accent color */
+    --clr-accent-1: #D0A98F;  /* Light Nude Beige */
+    --clr-accent-2: #AE8C6A;  /* Medium Nude Beige */
     
+    /* Background shades */
+    --clr-bg-1: #FDF8F3;  /* Light Nude Pink */
+    --clr-bg-2: #F8F1E9;  /* Light Beige */
+    --clr-bg-3: #E2D7CE;  /* Darker Beige */
 
-    /* darkest grey - used for headings */
-    --clr-brown-1: #2C2926;
-    --clr-brown-2: #634B34;
+    /* Darkest grey - used for headings */
+    --clr-brown-1: #2C2926;  /* Dark Brown */
+    --clr-brown-2: #634B34;  /* Medium Brown */
 
-    /* grey used for paragraphs */
-    --clr-brown-3: #4E4743;
+    /* Grey used for paragraphs */
+    --clr-brown-3: #4E4743;  /* Light Brown */
 
-    /* beige */
-    --clr-beige-1:  #B5A795;
-    --clr-beige-1: #8D8069;
+    /* Beige */
+    --clr-beige-1: #B5A795;  /* Light Nude Beige */
+    --clr-beige-2: #8D8069;  /* Medium Nude Beige */
 
-    --clr-white: #fff;
+    --clr-white: #fff;  /* White */
+
+    /* Font families */
     --ff-primary: 'Ubuntu', sans-serif;
     --ff-secondary: 'Lora', serif;
+
+    /* Other variables */
     --transition: all 0.3s linear;
     --spacing: 0.25rem;
     --radius: 0.5rem;
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
     --border-btm: 1px #707070 solid;
-    }
+}
+/* Rest of your CSS styles */
+
+
 /* 
 =============
 Global styles
@@ -46,23 +52,22 @@ body {
     font-size: 1.125rem;
     font-weight: 300;
     background-color: var(--clr-bg-2);
-    color:   var(--clr-brown-3);
     line-height: 1.5;
 }
 
-header {
-    background-color:   #F8F1E9; 
+.header {
     padding: 2em 0 1em 0;
     text-align: center;
     margin-bottom: 3rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2) inset;
 }
 
-footer {
-    background-color: var(--clr-bg-1);
+.footer {
     color: var(--clr-brown-1);
     margin-bottom: 0;
     text-align: center;
     padding: 2rem 0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2) inset;
 }
 
 h1,
@@ -101,9 +106,8 @@ img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
     margin-bottom: 2rem;
-
 }
 
 ul {
@@ -278,9 +282,9 @@ Sidebar
 */
 
 .sidebar-content {
-    border: 10px solid #E2D7CE;
-    background-color: #F8F1E9;
-    color: #2C2926;
+    border: 10px solid var(--clr-bg-3);
+    background-color: var(--clr-bg-2);
+    color: var(--clr-brown-1);
     margin-bottom: 2.5rem;
     padding: 1rem;
 }
@@ -294,11 +298,12 @@ Sidebar
 
 .sidebar-title {
     font-size: 1rem;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--ff-primary), sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
 }
+
 .sidebar-recent-post {
     font-size: 1rem;
     display: flex;
@@ -313,12 +318,13 @@ Sidebar
 }
 
 .sidebar-img {
-    order:-1;
+    order: -1;
 }
 
 .recent-post-title {
-    color: #143774;
+    color: var(--clr-accent-1);
 }
+
 
 @media (min-width: 675px) {
     .container-flex {
@@ -339,6 +345,57 @@ Sidebar
 
 /* 
 =========== 
-Footer 
+Article page
 =========== 
 */
+.article-title {
+    font-size: 2rem;
+    color: var(--clr-brown-1);
+    margin-top: 0;
+}
+
+.article-title span {
+    color: var(--clr-accent-1);
+}
+
+.article-subheading {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--clr-brown-1);
+    opacity: .9;
+    margin-top: 1rem;
+}
+
+.article-subtitle {
+    font-size: 1.5rem;
+    color: var(--clr-brown-1);
+    margin-top: 2rem;
+}
+
+.article-paragraph {
+    font-size: 1.25rem;
+    color: var(--clr-brown-3);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+.article-paragraph:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--clr-accent-2);
+}
+
+.author {
+    font-size: 1.2rem;
+    color: var(--clr-accent-2);
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 450px) {
+    .image-article {
+    object-position: center;
+    }
+}
